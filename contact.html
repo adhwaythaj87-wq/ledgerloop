@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Login | Ledger Loop</title>
+  <meta name="description" content="Get in touch with the Ledger Loop team or start your free trial today.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgerloop.com/contact.html">
+  <meta property="og:title" content="Contact & Login | Ledger Loop">
+  <meta property="og:description" content="Get in touch with the Ledger Loop team or start your free trial today.">
+  <meta property="og:image" content="https://ledgerloop.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main-content">
+    
+    <div class="grid-structural" style="min-height: 80vh; border-top: 1px solid var(--color-ink);">
+      
+      <!-- Left Info Side -->
+      <section class="hero-content" style="grid-column: span 6; border-right: 1px solid var(--color-ink); padding: 4rem 2rem;">
+        <h1>Secure your runway.</h1>
+        <p style="font-size: 1.25rem;">Our team responds within 24 hours. We're based in Chicago and built this specifically for agencies tired of spreadsheet math.</p>
+        
+        <div style="margin-top: 4rem;">
+          <h2 style="font-family: var(--font-data); font-size: 0.9rem; text-transform: uppercase;">Direct Inquiries</h2>
+          <p>hello@ledgerloop.com<br>1-800-555-LOOP</p>
+        </div>
+      </section>
+
+      <!-- Right Form Side -->
+      <section style="grid-column: span 6; padding: 4rem 2rem; background: var(--color-paper);">
+        <form id="contact-form" novalidate onsubmit="event.preventDefault(); alert('Form submitted successfully. We will be in touch shortly.');">
+          
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Work Email</label>
+            <input type="email" id="email" name="email" class="form-input" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="company_size" class="form-label">Agency Size</label>
+            <select id="company_size" name="company_size" class="form-input" required aria-required="true">
+              <option value="" disabled selected>Select headcount...</option>
+              <option value="1">Solo</option>
+              <option value="2-10">2-10 Employees</option>
+              <option value="11-50">11-50 Employees</option>
+              <option value="51+">51+ Employees</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message / Inquiry</label>
+            <textarea id="message" name="message" class="form-input" rows="5" required aria-required="true"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Transmission</button>
+        </form>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer id="site-footer" style="border-top: 1px solid var(--color-ink); padding: 2rem 0;"></footer>
+
+  <script src="/js/content-data.js"></script>
+  <script src="/js/components.js"></script>
+</body>
+</html>

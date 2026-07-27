@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ledger Loop | 13-Week Cash Flow Forecast for Agencies</title>
+  <meta name="description" content="Stop guessing next month's payroll. Ledger Loop syncs with QuickBooks, Xero, and FreshBooks to give small agencies a rolling 13-week cash flow forecast.">
+  
+  <!-- Preconnect for Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ledgerloop.com/">
+  <meta property="og:title" content="Ledger Loop | 13-Week Cash Flow Forecast">
+  <meta property="og:description" content="Stop guessing next month's payroll. Ledger Loop gives small agencies a rolling 13-week cash flow forecast.">
+  <meta property="og:image" content="https://ledgerloop.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ledger Loop",
+    "url": "https://ledgerloop.com",
+    "logo": "https://ledgerloop.com/assets/logo.png",
+    "description": "B2B SaaS product that gives small agencies and consultancies a rolling 13-week cash flow forecast."
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Stop guessing next month's payroll.</h1>
+        <p style="font-size: 1.25rem; max-width: 600px; margin-bottom: 2rem;">Sync your accounting software in 5 minutes. Get a real-time, 13-week rolling cash flow forecast that spots money trouble before it happens.</p>
+        <a href="/contact.html" class="btn btn-primary">Start Free Trial</a>
+      </div>
+
+      <!-- The Signature Element: 13-Week Horizon Grid -->
+      <div class="horizon-grid-wrapper" aria-label="Interactive 13-week forecast grid">
+        
+        <!-- ARIA Live Region for Screen Readers -->
+        <div id="scenario-announcer" aria-live="polite" class="sr-only">Showing baseline expected cash flow. All weeks are safely above the deficit threshold.</div>
+        
+        <!-- Grid Headers -->
+        <div class="horizon-grid-headers">
+          <!-- 13 Weeks -->
+          <div class="horizon-col-header current"><span class="sr-only">Current Week: </span>WK 01</div>
+          <div class="horizon-col-header">WK 02</div>
+          <div class="horizon-col-header">WK 03</div>
+          <div class="horizon-col-header">WK 04</div>
+          <div class="horizon-col-header">WK 05</div>
+          <div class="horizon-col-header">WK 06</div>
+          <div class="horizon-col-header" id="header-wk7">WK 07</div>
+          <div class="horizon-col-header" id="header-wk8">WK 08</div>
+          <div class="horizon-col-header">WK 09</div>
+          <div class="horizon-col-header">WK 10</div>
+          <div class="horizon-col-header">WK 11</div>
+          <div class="horizon-col-header">WK 12</div>
+          <div class="horizon-col-header">WK 13</div>
+        </div>
+
+        <!-- Chart Area -->
+        <div class="horizon-chart-area" aria-hidden="true">
+          <!-- Background column lines -->
+          <div class="horizon-col-line"></div><div class="horizon-col-line"></div>
+          <div class="horizon-col-line"></div><div class="horizon-col-line"></div>
+          <div class="horizon-col-line"></div><div class="horizon-col-line"></div>
+          <div class="horizon-col-line"></div><div class="horizon-col-line"></div>
+          <div class="horizon-col-line"></div><div class="horizon-col-line"></div>
+          <div class="horizon-col-line"></div><div class="horizon-col-line"></div>
+          <div class="horizon-col-line"></div>
+
+          <!-- The Step-Line -->
+          <svg class="chart-svg" viewBox="0 0 1300 400" preserveAspectRatio="none">
+            <!-- Normal Step Path: 
+                 Starts high, steps horizontally across weeks, drops slightly, stays above 60% (240px Y) 
+                 Path: M 0,100 L 200,100 L 200,150 L 500,150 L 500,200 L 1300,200
+            -->
+            <path id="cash-trend-line" class="cash-line" d="M 0,100 L 200,100 L 200,150 L 600,150 L 600,180 L 1300,180"></path>
+          </svg>
+
+          <!-- Deficit Threshold & Warning Icons -->
+          <div class="safety-line"></div>
+          <span class="safety-label">ZERO CASH LINE ($0)</span>
+          
+          <div id="deficit-icon" class="deficit-warning-icon" style="top: 65%; left: 48%;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            DEFICIT WARNING
+          </div>
+        </div>
+
+        <!-- Interactive Controls -->
+        <div class="scenario-panel">
+          <span class="scenario-title">Scenario Modeling Engine</span>
+          <div class="scenario-controls" role="group" aria-label="Forecast Scenarios">
+            <button class="scenario-btn" aria-pressed="true" id="btn-baseline">Baseline</button>
+            <button class="scenario-btn" aria-pressed="false" id="btn-delayed">What if Acme Corp pays 30 days late?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Structual Content Area -->
+    <section class="section container" style="padding: 6rem 1rem;">
+      <h2 style="margin-bottom: 4rem;">From spreadsheet chaos to absolute clarity.</h2>
+      
+      <ul class="index-list">
+        <li class="index-item">
+          <div class="index-marker">[01]</div>
+          <h3 class="index-title">Sync in Seconds</h3>
+          <p>Connect QuickBooks, Xero, or FreshBooks. We pull your historical data and outstanding invoices instantly. No manual data entry required.</p>
+        </li>
+        <li class="index-item">
+          <div class="index-marker">[02]</div>
+          <h3 class="index-title">Auto-Build Baseline</h3>
+          <p>Ledger Loop analyzes your client payment velocity (who pays on time vs. late) and mathematically plots your 13-week cash timeline.</p>
+        </li>
+        <li class="index-item">
+          <div class="index-marker">[03]</div>
+          <h3 class="index-title">Test Your Assumptions</h3>
+          <p>Test new hires, late payments, or lost retainers in our sandbox to see the cash impact before you commit. (See the chart above).</p>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" style="border-top: 1px solid var(--color-ink); padding: 2rem 0;"></footer>
+
+  <!-- Scripts -->
+  <script src="/js/content-data.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
