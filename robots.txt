@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ledgerloop.com/sitemap.xml
+Sitemap: https://ledgerloop-alpha.vercel.app/sitemap.xml
